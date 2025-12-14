@@ -2595,9 +2595,11 @@ header.scrolled .jury-notice {
 }
 
 .block-about__bg--left {
+    filter: brightness(90%);
     left: 0;
     background: url(images/sany.png) no-repeat center center;
     background-size: 100% 100%
+    
 }
 
 @media(max-width: 1600px) {
@@ -2607,6 +2609,7 @@ header.scrolled .jury-notice {
 }
 
 .block-about__bg--right {
+    filter: brightness(90%);
     right: 0;
     background: url(images/vova.png) no-repeat center center;
     background-size: 100% 100%
