@@ -1,783 +1,122 @@
+
 <!doctype html>
 <html lang="ru">
-    <head>
-        <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width,initial-scale=1"/>
-        <title>STAR VEGAS 2025 — главная премия 10 А класса</title>
-        <meta name="description" content="Ежегодная премия, на которой собираются легенды нашего класса."/>
-        <meta property="og:type" content="website"/>
-        <meta property="og:url" content="https://maksim15132.github.io/SLAY_10A/#main"/>
-        <meta property="og:site_name" content="STAR VEGAS 2025"/>
-        <meta property="og:title" content="STAR VEGAS 2025 — главная премия 10А класса"/>
-        <meta property="og:description" content="Ежегодная премия, на которой собираются легенды нашего класса. Заходи на сайт и голосуй за лучших людей этого года"/>
-        <meta property="og:image" content="https://slay-award.ru/images/photos/open-graph.png"/>
-        <meta property="og:image:width" content="1600"/>
-        <meta property="og:image:height" content="800"/>
-        <meta property="og:image:type" content="image/png"/>
-        <meta property="og:image:alt" content="STAR VEGAS 2025 — главная премия 10А класса"/>
-        <meta name="twitter:card" content="summary_large_image"/>
-        <meta name="twitter:title" content="STAR VEGAS 2025 — главная премия 10А класса"/>
-        <meta name="twitter:description" content="Ежегодная премия, на которой собираются легенды нашего класаа. Заходи на сайт и голосуй за лучших людей этого года"/>
-        <meta name="twitter:image" content="open-f.jpg"/>
-        <link rel="icon" type="image/x-icon" href="/assets/favicon/favicon.ico"/>
-        <style>
-            .preloader {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100vw;
-                height: 100vh;
-                z-index: 10000;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                background: #050814;
-                opacity: 1;
-                pointer-events: all;
-                transition: opacity 0.5s ease;
-            }
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#000000">
+<title>STAR VEGAS — Скоро</title>
+<meta name="description" content="STAR VEGAS — главная премия 11А класса. Скоро.">
+<link rel="icon" type="image/png" href="лого слей 2026.png">
+<style>
+/* Figma «SLAY_Design_2026_to_client» → WEB → «Микро-анонс» (1592-3303), handoff 24.10.
+   Desktop: frame 1920×960 scaled to cover the viewport; --u = 1 design px. Mobile: 375×768 layout image. */
+@font-face{font-family:"SPSL OldKing";src:url(data:font/woff2;base64,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) format("woff2");font-weight:400;font-display:block}
+:root{--orange:#ff6a13;--social:#72320f}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;height:100%;background:#000;overflow:hidden}
+.sr{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
-            .preloader__video {
-                mix-blend-mode: screen;
-                max-width: 100%;
-                max-height: 100%;
-            }
+.frame{position:absolute;left:50%;top:50%;translate:-50% -50%}
 
-            .preloader.preloader--hidden {
-                opacity: 0;
-                pointer-events: none;
-            }
+/* desktop: background halves pinned to the left and right edges at height scale (--h), so the decor at
+   the edges is never cropped; the centre of the art is black, so the halves meet or overlap without a seam.
+   Content scale --c shrinks on narrower screens to keep clear of the stones. Positions are frame px around y=480. */
+.d{position:fixed;inset:0;--h:calc(100dvh / 960);--c:min(var(--h),calc(100vw / 1700))}
+.d .half{position:absolute;top:0;width:calc(var(--h) * 960);height:100dvh;background:center/100% 100% no-repeat;mix-blend-mode:lighten}
+.d .half--l{left:0;background-image:url("2 бок.webp")}
+.d .half--r{right:0;background-image:url("1 бок.webp")}
+.d .logo{position:absolute;left:50%;top:calc(50dvh + var(--c) * -392);width:calc(var(--c) * 584);height:auto;translate:-50% 0}
+.d h1{position:absolute;left:0;right:0;top:calc(50dvh + var(--c) * (457 - 480));margin:0;padding-left:.1em;
+  font:400 calc(var(--c) * 128)/.95 "SPSL OldKing",serif;letter-spacing:.1em;text-align:center;text-transform:uppercase;
+  color:transparent;background:linear-gradient(180deg,#f69c4e 0%,#d94922 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.d .social{position:absolute;left:50%;top:calc(50dvh + var(--c) * 288);translate:-50% 0;display:flex;gap:calc(var(--c) * 37.43)}
+.d .social a{display:block;width:calc(var(--c) * 89.84);height:calc(var(--c) * 89.84);color:var(--social);transition:color 160ms ease}
+.d .social a:hover,.d .social a:focus-visible,.d .social a:active{color:var(--orange)}
+.d .social svg{display:block;width:100%;height:100%}
+.d .social svg path{fill:currentColor}
 
-            @media (max-width: 768px) {
-                .preloader__video {
-                    width: 80vw;
-                }
-            }
-        </style>
-        <script>
-            (function(m, e, t, r, i, k, a) {
-                m[i] = m[i] || function() {
-                    (m[i].a = m[i].a || []).push(arguments)
-                }
-                ;
-                m[i].l = 1 * new Date();
-                for (var j = 0; j < document.scripts.length; j++) {
-                    if (document.scripts[j].src === r) {
-                        return;
-                    }
-                }
-                k = e.createElement(t),
-                a = e.getElementsByTagName(t)[0],
-                k.async = 1,
-                k.src = r,
-                a.parentNode.insertBefore(k, a)
-            }
-            )(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js', 'ym');
+/* mobile: designer's 375×768 layout; links sit over the drawn icons */
+.m{display:none;width:max(100vw,calc(100dvh * 375 / 768));aspect-ratio:375/768;background:url(star_vegas_phone_updated.webp) center/100% 100% no-repeat}
+.m a{position:absolute;top:63.7%;width:14%;height:6.84%;border-radius:8px}
+.m a:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
+.m .vk{left:33.07%}
+.m .tg{left:52.93%}
 
-            ym(95759648, 'init', {
-                clickmap: true,
-                accurateTrackBounce: true,
-                trackLinks: true
-            });
-        </script>
-        <noscript>
-            <div>
-                <img src="https://mc.yandex.ru/watch/95759648" style="position:absolute; left:-9999px;" alt=""/>
-            </div>
-        </noscript>
-        <script defer="defer" src="main.6535a82626959f95975f.js"></script>
-        <link href="main.5c38442bc9da7634c79f.css" rel="stylesheet">
-    </head>
-    <div class="preloader preloader_active">
-        <video autoplay muted loop playsinline class="preloader__video">
-            <source src="videos/preloader.webm" type="video/webm"/>
-        </video>
-    </div>
-    <dialog class="modal" id="authModal">
-        <div class="modal__content">
-            <div class="modal__close">
-                <button class="modal__close-button">
-                    <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="1.90234" y="0.5" width="25.5899" height="2.69367" transform="rotate(45 1.90234 0.5)" fill="#72320F"/>
-                        <rect x="-0.00390625" y="18.5977" width="25.5899" height="2.69367" transform="rotate(-45 -0.00390625 18.5977)" fill="#72320F"/>
-                    </svg>
-                </button>
-            </div>
-            <div class="modal__content-header">
-                <h2 class="modal__title">Авторизация</h2>
-                <p class="modal__text">Чтобы предложить номинации, пройди авторизацию через один из &nbsp;доступных сервисов.</p>
-            </div>
-            <div class="modal__links"></div>
-            <div class="modal__policy">
-                <label for="policy" class="input-checkbox">
-                    <input type="checkbox" name="policy" id="policy"/>
-                    <span class="input-checkbox__checkmark">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                            <path d="M19 3H5C4.46957 3 3.96086 3.21071 3.58579 3.58579C3.21071 3.96086 3 4.46957 3 5V19C3 19.5304 3.21071 20.0391 3.58579 20.4142C3.96086 20.7893 4.46957 21 5 21H19C19.5304 21 20.0391 20.7893 20.4142 20.4142C20.7893 20.0391 21 19.5304 21 19V5C21 4.46957 20.7893 3.96086 20.4142 3.58579C20.0391 3.21071 19.5304 3 19 3ZM19 5V19H5V5H19Z" fill="#72320F"/>
-                        </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                            <path d="M19 3H5C4.46957 3 3.96086 3.21071 3.58579 3.58579C3.21071 3.96086 3 4.46957 3 5V19C3 19.5304 3.21071 20.0391 3.58579 20.4142C3.96086 20.7893 4.46957 21 5 21H19C19.5304 21 20.0391 20.7893 20.4142 20.4142C20.7893 20.0391 21 19.5304 21 19V5C21 4.46957 20.7893 3.96086 20.4142 3.58579C20.0391 3.21071 19.5304 3 19 3ZM19 5V19H5V5H19Z" fill="#72320F"/>
-                            <path d="M7 12L10.5 15.5L18 8" stroke="#72320F" stroke-width="2"/>
-                        </svg>
-                    </span>
-                    <p>
-                        Продолжая авторизацию, вы даете <a href="assets/docs/ООО_МВП_СЛЭЙ_Согласие_на_обработку_персональных_данных.pdf" target="_blank">согласие на обработку</a>
-                        своих персональных данных в соответствии с <a href="assets/docs/ООО_МВП_СЛЭЙ_Политика_обработки_и_защиты_персональных_данных.pdf" target="_blank">Политикой конфиденциальности.</a>
-                    </p>
-                </label>
-            </div>
-        </div>
-    </dialog>
-    <dialog class="modal" id="nominationModal">
-        <div class="modal__content">
-            <div class="modal__close">
-                <button class="modal__close-button">
-                    <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="1.90234" y="0.5" width="25.5899" height="2.69367" transform="rotate(45 1.90234 0.5)" fill="#72320F"/>
-                        <rect x="-0.00390625" y="18.5977" width="25.5899" height="2.69367" transform="rotate(-45 -0.00390625 18.5977)" fill="#72320F"/>
-                    </svg>
-                </button>
-            </div>
-            <div class="modal__content-header">
-                <h2 class="modal__title">Номинация отправлена</h2>
-                <p class="modal__text">
-                    Спасибо за &nbsp;участие! Голосование за &nbsp;номинации начнется 15 декабря.<br/>
-                    Подписывайся на &nbsp;<a href="https://t.me" target="_blank">Telegram-канал</a>
-                    премии, чтобы ничего не пропустить.
-                </p>
-            </div>
-            <div class="modal__links">
-                <a href="#" class="modal__link button-frame">
-                    <span>Закрыть</span>
-                </a>
-            </div>
-        </div>
-    </dialog>
-    <dialog class="modal" id="successAuthModal">
-        <div class="modal__content">
-            <div class="modal__close">
-                <button class="modal__close-button">
-                    <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="1.90234" y="0.5" width="25.5899" height="2.69367" transform="rotate(45 1.90234 0.5)" fill="#72320F"/>
-                        <rect x="-0.00390625" y="18.5977" width="25.5899" height="2.69367" transform="rotate(-45 -0.00390625 18.5977)" fill="#72320F"/>
-                    </svg>
-                </button>
-            </div>
-            <div class="modal__content-header">
-                <h2 class="modal__title">АВТОРИЗАЦИЯ ПРОЙДЕНА</h2>
-                <p class="modal__text">Голосование за номинации начнется 15 декабря.</p>
-            </div>
-            <div class="modal__links">
-                <a href="#" class="modal__link button-frame">
-                    <span>Закрыть</span>
-                </a>
-            </div>
-        </div>
-    </dialog>
-    <dialog class="modal" id="remindAboutTransmissionModal">
-        <div class="modal__content">
-            <div class="modal__close">
-                <button class="modal__close-button">
-                    <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="1.90234" y="0.5" width="25.5899" height="2.69367" transform="rotate(45 1.90234 0.5)" fill="#72320F"/>
-                        <rect x="-0.00390625" y="18.5977" width="25.5899" height="2.69367" transform="rotate(-45 -0.00390625 18.5977)" fill="#72320F"/>
-                    </svg>
-                </button>
-            </div>
-            <div class="modal__content-header">
-                <h2 class="modal__title">Напомнить о &nbsp;событии</h2>
-                <p class="modal__text">Вы хотите добавить напоминание о &nbsp;премии SLAY в &nbsp;ваш календарь?</p>
-            </div>
-            <div class="modal__links">
-                <a href="https://calendar.google.com/calendar/u/0/r/eventedit?amp;tmeid=N2tiZ3VhdjgxcW5ndGptYTRkNm45MG05b2UgODhpbmY4OUBt&amp;tmsrc=88inf89@gmail.com" target="_blank" class="button-frame">
-                    <span>Добавить</span>
-                </a>
-                <img class="modal__links-logo" src="images/logos/winline.png" alt="Winline" loading="lazy"/>
-            </div>
-        </div>
-    </dialog>
-    <dialog class="modal" id="errorModal">
-        <div class="modal__content">
-            <div class="modal__close">
-                <button class="modal__close-button">
-                    <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="1.90234" y="0.5" width="25.5899" height="2.69367" transform="rotate(45 1.90234 0.5)" fill="#72320F"/>
-                        <rect x="-0.00390625" y="18.5977" width="25.5899" height="2.69367" transform="rotate(-45 -0.00390625 18.5977)" fill="#72320F"/>
-                    </svg>
-                </button>
-            </div>
-            <div class="modal__content-header">
-                <h2 class="modal__title">Ошибка</h2>
-                <p class="modal__text" id="errorModalText">Произошла ошибка. Попробуйте снова.</p>
-            </div>
-            <div class="modal__links">
-                <a href="#" class="modal__link button-frame">
-                    <span>Закрыть</span>
-                </a>
-            </div>
-        </div>
-    </dialog>
-    <dialog class="modal modal--content" id="contentNominationModal">
-        <div class="modal__content modal__content--content">
-            <div class="modal__close">
-                <button class="modal__close-button">
-                    <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="1.90234" y="0.5" width="25.5899" height="2.69367" transform="rotate(45 1.90234 0.5)" fill="#72320F"/>
-                        <rect x="-0.00390625" y="18.5977" width="25.5899" height="2.69367" transform="rotate(-45 -0.00390625 18.5977)" fill="#72320F"/>
-                    </svg>
-                </button>
-            </div>
-            <div class="modal__content-header">
-                <h2 class="modal__title modal__title--orange">Проголосовать за песню</h2>
-                <p class="modal__text">Введите название трека и вы автоматически проголосуете за него.</p>
-                <label class="input-default input-default--small-placeholder" for="input">
-                    <input id="input" placeholder="Введите название трека">
-                </label>
-                <a href="#" class="button-frame">
-                    <span>Отправить</span>
-                </a>
-                <img class="modal__links-logo" src="images/logos/winline.png" alt="Winline" loading="lazy"/>
-            </div>
-            <div class="modal__bg-left"></div>
-            <div class="modal__bg-right"></div>
-        </div>
-    </dialog>
-    <body>
-        <div class="header-mobile__popup">
-            <button class="header-mobile__popup-close" aria-label="Закрыть меню">
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-                    <rect x="8.40039" y="6" width="25.5899" height="2.69367" transform="rotate(45 8.40039 6)" fill="#72320F"/>
-                    <rect x="6.49609" y="24.0957" width="25.5899" height="2.69367" transform="rotate(-45 6.49609 24.0957)" fill="#72320F"/>
-                </svg>
-            </button>
-            <div class="header-mobile__popup-wrap">
-                <div class="header-mobile__popup-content">
-                    <img src="images/logos/winline.png" alt="Winline" loading="lazy"/>
-                    <div class="header-mobile__popup-nav">
-                        <a href="#nominations" class="header-mobile__popup-link">НОМИНАЦИИ</a>
-                        <a href="#faq" class="header-mobile__popup-link">ПРАВИЛА</a>
-                    </div>
-                </div>
-                <div class="header-mobile__popup-socials">
-                    
-                    <a href="https://vk.com/m.neiroset" class="header-mobile__popup-socials-link" aria-label="VK" target="_blank">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="34" height="20" viewBox="0 0 34 20" fill="none" aria-hidden="true">
-                            <path d="M0.46875 2.6334C0.46875 1.55739 1.32904 1.13265 2.38787 1.07601L7.31802 1.10433C7.61581 1.10433 7.88052 1.27423 7.97978 1.52907C9.10478 4.64385 10.4945 6.56934 12.1489 8.74969C12.2482 8.91958 12.4136 9.00453 12.579 9.00453C12.7114 9.00453 12.8438 8.9479 12.943 8.80632L13.0423 8.49484L13.0754 3.59615C13.0754 2.88825 12.6783 2.77498 11.7518 2.66172C11.3879 2.60509 11.1562 2.32192 11.1562 2.03876C11.1562 1.98213 11.1562 1.9255 11.1893 1.86887C11.6526 0.651271 13.1085 0.0283161 15.1599 0.0283161L17.0129 0C18.5349 0 19.9246 0.566323 19.9246 2.23698V8.66474C20.057 8.74969 20.1893 8.80632 20.3548 8.80632C20.6195 8.80632 20.9504 8.66474 21.2151 8.29663C22.9357 6.22955 24.8879 3.76605 25.1526 2.4635C25.1526 2.40687 25.1857 2.37856 25.2188 2.32192C25.5827 1.69897 26.5092 1.27423 26.9062 1.16096C26.9724 1.13265 27.0717 1.10433 27.204 1.10433H32.3327L32.6636 1.13265C33.1599 1.13265 33.5239 1.41581 33.6893 1.67065C33.9871 2.06708 33.921 2.49182 33.954 2.66172V2.85993C33.4577 5.4367 30.0165 8.32495 28.5607 10.1938C28.3621 10.4203 28.2629 10.6186 28.2629 10.8168C28.2629 10.9867 28.3621 11.1566 28.5276 11.3265L33.3585 16.5366C33.6232 16.8481 33.7555 17.2162 33.7555 17.5277C33.7555 18.4621 32.7298 19.0001 31.7371 19.0851L31.1746 19.1134H26.1452C26.046 19.1134 25.9798 19.1417 25.8805 19.1417C25.318 19.1417 24.8548 18.8869 24.5239 18.6037C23.4651 17.4994 22.4393 16.3667 21.4136 15.2624C21.2151 15.0359 21.1489 15.0076 20.9504 14.8943C20.7188 15.7155 20.5202 16.5649 20.2886 17.4144L20.1893 17.8958C20.0239 18.4055 19.5938 18.9435 18.7996 19.0851L18.3364 19.1134H15.0938C9.36949 19.1134 4.24081 12.1476 0.634191 3.45457C0.534926 3.22804 0.46875 2.91656 0.46875 2.6334Z" fill="#72320F"/>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-            <video autoplay muted loop playsinline class="header-mobile__popup__video header-mobile__popup__video--left">
-                <source src="videos/chain-left.webm" type="video/webm"/>
-            </video>
-            <video autoplay muted loop playsinline class="header-mobile__popup__video header-mobile__popup__video--right">
-                <source src="videos/chain-right.webm" type="video/webm"/>
-            </video>
-        </div>
-        <header class="header">
-            <div class="header-nav">
-                <div class="header-nav__list">
-                    <a href="/#nominations" class="header-nav__link">Номинации</a>
-                    <a href="/#faq" class="header-nav__link">ПРАВИЛА</a>
-                </div>
-            </div>
-            <a href="#main" class="header-nav__logo">
-                <img src="images/logos/winline.png" alt="Winline"/>
-            </a>
-            <div class="header-socials">
-                <ul class="header-socials__list">
-                    <a href="https://vk.com/m.neiroset" class="header-socials__link" aria-label="VK" target="_blank">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="34" height="20" viewBox="0 0 34 20" fill="none" aria-hidden="true">
-                            <path d="M0.46875 2.6334C0.46875 1.55739 1.32904 1.13265 2.38787 1.07601L7.31802 1.10433C7.61581 1.10433 7.88052 1.27423 7.97978 1.52907C9.10478 4.64385 10.4945 6.56934 12.1489 8.74969C12.2482 8.91958 12.4136 9.00453 12.579 9.00453C12.7114 9.00453 12.8438 8.9479 12.943 8.80632L13.0423 8.49484L13.0754 3.59615C13.0754 2.88825 12.6783 2.77498 11.7518 2.66172C11.3879 2.60509 11.1562 2.32192 11.1562 2.03876C11.1562 1.98213 11.1562 1.9255 11.1893 1.86887C11.6526 0.651271 13.1085 0.0283161 15.1599 0.0283161L17.0129 0C18.5349 0 19.9246 0.566323 19.9246 2.23698V8.66474C20.057 8.74969 20.1893 8.80632 20.3548 8.80632C20.6195 8.80632 20.9504 8.66474 21.2151 8.29663C22.9357 6.22955 24.8879 3.76605 25.1526 2.4635C25.1526 2.40687 25.1857 2.37856 25.2188 2.32192C25.5827 1.69897 26.5092 1.27423 26.9062 1.16096C26.9724 1.13265 27.0717 1.10433 27.204 1.10433H32.3327L32.6636 1.13265C33.1599 1.13265 33.5239 1.41581 33.6893 1.67065C33.9871 2.06708 33.921 2.49182 33.954 2.66172V2.85993C33.4577 5.4367 30.0165 8.32495 28.5607 10.1938C28.3621 10.4203 28.2629 10.6186 28.2629 10.8168C28.2629 10.9867 28.3621 11.1566 28.5276 11.3265L33.3585 16.5366C33.6232 16.8481 33.7555 17.2162 33.7555 17.5277C33.7555 18.4621 32.7298 19.0001 31.7371 19.0851L31.1746 19.1134H26.1452C26.046 19.1134 25.9798 19.1417 25.8805 19.1417C25.318 19.1417 24.8548 18.8869 24.5239 18.6037C23.4651 17.4994 22.4393 16.3667 21.4136 15.2624C21.2151 15.0359 21.1489 15.0076 20.9504 14.8943C20.7188 15.7155 20.5202 16.5649 20.2886 17.4144L20.1893 17.8958C20.0239 18.4055 19.5938 18.9435 18.7996 19.0851L18.3364 19.1134H15.0938C9.36949 19.1134 4.24081 12.1476 0.634191 3.45457C0.534926 3.22804 0.46875 2.91656 0.46875 2.6334Z" fill="#72320F"/>
-                        </svg>
-                    </a>
+@media (max-aspect-ratio:119/100){
+  .d{display:none}
+  .m{display:block}
+}
+@media (min-aspect-ratio:3/4) and (max-aspect-ratio:119/100){
+  .m{width:auto;height:100dvh}
+}
+/* Плавное появление основных элементов */
+@keyframes appear {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
 
-                </ul>
-            </div>
-            <button class="header-mobile__button" aria-label="Открыть меню">
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-                    <rect x="0.96875" y="11.6367" width="30.0606" height="1.93939" fill="#72320F"/>
-                    <rect x="6.78711" y="15.5156" width="18.4242" height="1.93939" fill="#72320F"/>
-                    <rect x="10.666" y="19.3945" width="10.6667" height="1.93939" fill="#72320F"/>
-                </svg>
-            </button>
-            <div class="jury-notice">
-                <span class="jury-notice__text">Ты жюри, твой голос Важен!</span>
-            </div>
-        </header>
-        <main class="main">
-            <section id="main" class="block-hero">
-                <div class="block-hero__image"></div>
-                <video autoplay muted loop playsinline class="block-hero__video block-hero__video--left">
-                    <source src="videos/flags.mp4" type="video/webm"/>
-                </video>
-                <div class="block-hero__wrap">
-                    <img src="images/logos/SLAY.png" alt="SLAY"/>
-                    <img src="images/photos/cup.png" alt="Cup"/>
-                </div>
-                <div class="block-hero__text">
-                    <h1>ГЛАВНАЯ ПРЕМИЯ 10А КЛАССА</h1>
-                    <a href="#golos" class="button-frame">
-                        <span>Голосовать</span>
-                    </a>
-                </div>
-                <div class="block-hero__overlay"></div>
-            </section>
-            <section class="block-partners">
-                <div class="block-partners__main-item">
-                    <img src="images/logos/winline.png" alt="Winline" loading="lazy"/>
-                </div>
-                <div class="block-partners__wrap">
-                    <div class="block-partners__item">
-                        <img src="2х2.svg" alt="2x2" loading="lazy"/>
-                    </div>
-                    <div class="block-partners__item">
-                        <img src="images/logos/rostelecom.svg" alt="ZharaFM" loading="lazy"/>
-                    </div>
-                    <div class="block-partners__item">
-                        <img src="images/logos/theGirl.svg" alt="The Girl" loading="lazy"/>
-                    </div>
-                    <div class="block-partners__item">
-                        <img src="images/logos/chempionat.svg" alt="Chempionat" loading="lazy"/>
-                    </div>
-                    <div class="block-partners__item">
-                        <img src="images/logos/voice.svg" alt="Voice" loading="lazy"/>
-                    </div>
-                    <div class="block-partners__item">
-                        <img src="images/logos/maxim-maximonline.svg" alt="Maxim Maximonline" loading="lazy"/>
-                    </div>
-                    <div class="block-partners__item">
-                        <img src="images/logos/igromania.svg" alt="Igromania" loading="lazy"/>
-                    </div>
-                    <div class="block-partners__item">
-                        <img src="images/logos/afisha_daily.svg" alt="Afisha Daily" loading="lazy"/>
-                    </div>
-                    <div class="block-partners__item">
-                        <img src="images/logos/ZharaFM.svg" alt="ZharaFM" loading="lazy"/>
-                    </div>
-                </div>
-            </section>
-            <section id="about" class="block-about">
-                <div class="block-about__bg block-about__bg--left"></div>
-                <div class="block-about__bg block-about__bg--right"></div>
-                <video autoplay muted loop playsinline class="block-about__video block-about__video--left">
-                    <source src="videos/chain-left.webm" type="video/webm"/>
-                </video>
-                <video autoplay muted loop playsinline class="block-about__video block-about__video--right">
-                    <source src="videos/chain-right.webm" type="video/webm"/>
-                </video>
-                <div class="block-about__slider swiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="block-about__image">
-                                <img src="images/photos/uzgu.jpg" alt="About 1" loading="lazy"/>
-                            </div>
-                            <div class="block-about__content">
-                                <h2 class="block-about__title">STAR VEGAS</h2>
-                                <h2 class="block-about__title">A LEGENDS AWARDS OF THE YEAR</h2>
-                                <p class="block-about__text">Ежегодная премия, на &nbsp;которой собираются легенды 10 А класса. Именно ты выберешь лучших людей в своей категории, которые получат награду в &nbsp;формате масштабного шоу.</p>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="block-about__image">
-                                <img src="images/photos/vovo2.png" alt="About 2" loading="lazy"/>
-                            </div>
-                            <div class="block-about__content">
-                                <h2 class="block-about__title">10 A LEGENDS AWARDS OF THE YEAR</h2>
-                                <p class="block-about__text">
-                                    Именно на этой премии вы сможете в компании друзей вспомнить самые яркие поменты прошедшего года и насладиться атмосферой хорошего настроения.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="block-about__image">
-                                <img src="images/photos/sanyxbet.png" alt="About 3" loading="lazy"/>
-                            </div>
-                            <div class="block-about__content">
-                                <h2 class="block-about__title">10 A LEGENDS AWARDS OF THE YEAR</h2>
-                                <p class="block-about__text">
-                                    Главным партнером и &nbsp;организатором премии выступает САНЁКXBET. Каждый год компания меняет индустрию и &nbsp;выводит 10 А класс на &nbsp;новый уровень. (Мы не играем в азартные игры и вас не призываем)
-                                </p>
-                            </div>
-                        </div>
-                    
-                        <div class="swiper-slide">
-                            <div class="block-about__image">
-                                <img src="images/photos/2025-12-14_18-20-19.png" alt="About 7" loading="lazy"/>
-                            </div>
-                            <div class="block-about__content">
-                                <h2 class="block-about__title">10 A LEGENDS AWARDS OF THE YEAR</h2>
-                                <p class="block-about__text">Ежегодная премия, на &nbsp;которой собираются легенды 10 А класса. Именно ты выберешь лучших людей в своей категории, которые получат награду в &nbsp;формате масштабного шоу.</p>
-                            </div>
-                        </div>
-                    
-                    </div>
-                    <div class="block-about__actions">
-                        <div class="block-about__button-prev swiper-button-prev" role="button" aria-label="Предыдущий слайд"></div>
-                        <div class="block-about__pagination swiper-pagination" role="navigation" aria-label="Слайды"></div>
-                        <div class="block-about__button-next swiper-button-next" role="button" aria-label="Следующий слайд"></div>
-                    </div>
-                </div>
-            </section>
-            <section id="nominations" class="block-nominations-actual">
-                <h2 class="block-nominations-actual__title">НОМИНАЦИИ 2025</h2>
-                <div class="block-nominations-actual__main">
-                    <div class="block-nominations-actual__item">
-                        <div class="block-nominations-actual__item-image">
-                            <img src="images/photos/uroo2.png" alt="Номинация 1" loading="lazy"/>
-                        </div>
-                        <h2 class="block-nominations-actual__item-title">КОРОЛЬ КЛАССА</h2>
-                        <p class="block-nominations-actual__item-text">Это тот, кто был главным героем всех обсуждений.</p>
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeEUpPzTOcuq5LiSvenuYO1Yk3DEySsiftwBYVcoTI4EDaI0g/viewform?usp=dialog" target="_blank" class="block-nominations-actual__item-link">
-                            <span>Голосовать тут</span>
-                        </a>
-                    </div>
-                    <div class="block-nominations-actual__item">
-                        <div class="block-nominations-actual__item-image">
-                            <img src="images/photos/queenpng.png" alt="Номинация 1" loading="lazy"/>
-                        </div>
-                        <h2 class="block-nominations-actual__item-title">КОРОЛЕВА КЛАССА</h2>
-                        <p class="block-nominations-actual__item-text">Это личность, которая завораживала и всех впечатляла.</p>
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeEUpPzTOcuq5LiSvenuYO1Yk3DEySsiftwBYVcoTI4EDaI0g/viewform?usp=dialog" target="_blank" class="block-nominations-actual__item-link">
-                            <span>Голосовать тут</span>
-                        </a>
-                    </div>
-                </div>
-            </section>
-            <section class="block-winners block-winners--actual">
-                <div class="block-winners__wrap">
-                    <div class="block-winners__content">
-                        <div class="block-winners__tab-content block-winners__tab-content--active" data-tab-content="2025">
-                            <div class="block-winners__slider swiper">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <div class="block-winners__item">
-                                            <div class="block-winners__item-image">
-                                                <img src="nomin.png" alt="Winners 2024" loading="lazy"/>
-                                            </div>
-                                            <p class="block-winners__item-text">ЧЕЛОВЕК-МЕМ ГОДА</p>
-                                            <h2 class="block-winners__item-title">Это человек, чьи фразы и поступки стали шутками, заставляя смеяться всех.</h2>
-                                            
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="block-winners__item">
-                                            <div class="block-winners__item-image">
-                                                <img src="nomin.png" alt="Winners 2024" loading="lazy"/>
-                                            </div>
-                                            <p class="block-winners__item-text">ЗАВОЗ ГОДА</p>
-                                            <h2 class="block-winners__item-title">Это момент, который стало главным мемом и рассмешило всех.</h2>
-                                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeEUpPzTOcuq5LiSvenuYO1Yk3DEySsiftwBYVcoTI4EDaI0g/viewform?usp=dialog" target="_blank" class="block-winners__item-prompt">Голосовать тут</a>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="block-winners__item">
-                                            <div class="block-winners__item-image">
-                                                <img src="nomin.png" alt="Winners 2024" loading="lazy"/>
-                                            </div>
-                                            <p class="block-winners__item-text">СТИЛЬ ГОДА</p>
-                                            <h2 class="block-winners__item-title">Это стиль или образ, ставший главным мемом года.</h2>
-                                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeEUpPzTOcuq5LiSvenuYO1Yk3DEySsiftwBYVcoTI4EDaI0g/viewform?usp=dialog" target="_blank" class="block-winners__item-prompt">Голосовать тут</a>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="block-winners__item">
-                                            <div class="block-winners__item-image">
-                                                <img src="nomin.png" alt="Winners 2024" loading="lazy"/>
-                                            </div>
-                                            <p class="block-winners__item-text">ПОМОЩНИК ГОДА</p>
-                                            <h2 class="block-winners__item-title">Это человек, который всегда помогал и спасал всех вокруг.</h2>
-                                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeEUpPzTOcuq5LiSvenuYO1Yk3DEySsiftwBYVcoTI4EDaI0g/viewform?usp=dialog" target="_blank" class="block-winners__item-prompt">Голосовать тут</a>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="block-winners__item">
-                                            <div class="block-winners__item-image">
-                                                <img src="nomin.png" alt="Winners 2024" loading="lazy"/>
-                                            </div>
-                                            <p class="block-winners__item-text">КИБЕРСПОРТСМЕН ГОДА</p>
-                                            <h2 class="block-winners__item-title">человек, провёвший часы за игрой, побеждая всех.</h2>
-                                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeEUpPzTOcuq5LiSvenuYO1Yk3DEySsiftwBYVcoTI4EDaI0g/viewform?usp=dialog" target="_blank" class="block-winners__item-prompt">Голосовать тут</a>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="block-winners__item">
-                                            <div class="block-winners__item-image">
-                                                <img src="nomin.png" alt="Winners 2024" loading="lazy"/>
-                                            </div>
-                                            <p class="block-winners__item-text">ПАРА ГОДА</p>
-                                            <h2 class="block-winners__item-title">Это пара, за которой весь год наблюдали все.</h2>
-                                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeEUpPzTOcuq5LiSvenuYO1Yk3DEySsiftwBYVcoTI4EDaI0g/viewform?usp=dialog" target="_blank" class="block-winners__item-prompt">Голосовать тут</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="block-winners__actions">
-                                    <div class="block-winners__button-prev swiper-button-prev" role="button" aria-label="Предыдущий слайд"></div>
-                                    <div class="block-winners__pagination swiper-pagination" role="navigation" aria-label="Слайды"></div>
-                                    <div class="block-winners__button-next swiper-button-next" role="button" aria-label="Следующий слайд"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section class="block-winners">
-                <div class="block-winners__wrap">
-                    <h2 class="block-winners__title">
-                        ДОПОЛНИТЕЛЬНЫЕ НОМИНАЦИИ
-                    </h2>
-                    <div class="block-winners__content">
-                        <div class="block-winners__tab-content block-winners__tab-content--active" data-tab-content="2025">
-                            <div class="block-winners__slider swiper">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <div class="block-winners__item">
-                                            <div class="block-winners__item-image">
-                                                <img src="nomin.png" alt="Winners 2024" loading="lazy"/>
-                                            </div>
-                                            <p class="block-winners__item-text">ХАРИЗМА ГОДА</p>
-                                            <h2 class="block-winners__item-title">Это человек, который брал харизмой без усилий.</h2>
-                                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeEUpPzTOcuq5LiSvenuYO1Yk3DEySsiftwBYVcoTI4EDaI0g/viewform?usp=dialog" target="_blank" class="block-winners__item-prompt">Голосовать тут</a>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="block-winners__item">
-                                            <div class="block-winners__item-image">
-                                                <img src="nomin.png" alt="Winners 2024" loading="lazy"/>
-                                            </div>
-                                            <p class="block-winners__item-text">СПОРТСМЕН ГОДА</p>
-                                            <h2 class="block-winners__item-title">Это тот, кто посвятил год тренировкам и победам.</h2>
-                                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeEUpPzTOcuq5LiSvenuYO1Yk3DEySsiftwBYVcoTI4EDaI0g/viewform?usp=dialog" target="_blank" class="block-winners__item-prompt">Голосовать тут</a>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="block-winners__item">
-                                            <div class="block-winners__item-image">
-                                                <img src="nomin.png" alt="Winners 2024" loading="lazy"/>
-                                            </div>
-                                            <p class="block-winners__item-text">ТИХОНЯ ГОДА</p>
-                                            <h2 class="block-winners__item-title">Это человек, незаметный, но запомнившийся всем.</h2>
-                                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeEUpPzTOcuq5LiSvenuYO1Yk3DEySsiftwBYVcoTI4EDaI0g/viewform?usp=dialog" target="_blank" class="block-winners__item-prompt">Голосовать тут</a>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="block-winners__item">
-                                            <div class="block-winners__item-image">
-                                                <img src="images/photos/50pka.webp" alt="Winners 2024" loading="lazy"/>
-                                            </div>
-                                            <p class="block-winners__item-text">ПАСХАЛКА 42</p>
-                                            <h2 class="block-winners__item-title">5opka</h2>
-                                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeEUpPzTOcuq5LiSvenuYO1Yk3DEySsiftwBYVcoTI4EDaI0g/viewform?usp=dialog" target="_blank" class="block-winners__item-prompt">Голосовать тут</a>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="block-winners__item">
-                                            <div class="block-winners__item-image">
-                                                <img src="nomin.png" alt="Winners 2024" loading="lazy"/>
-                                            </div>
-                                            <p class="block-winners__item-text">СТИКЕР ГОДА</p>
-                                            <h2 class="block-winners__item-title">Это тот самый стикер, который видели и запомнили все.</h2>
-                                            <div class="block-winners__item-prompts">
-                                                <a href="https://www.twitch.tv/koreshzy" target="_blank" class="block-winners__item-prompt">Twitch-канал</a>
-                                                / <a href="https://docs.google.com/forms/d/e/1FAIpQLSeEUpPzTOcuq5LiSvenuYO1Yk3DEySsiftwBYVcoTI4EDaI0g/viewform?usp=dialog" target="_blank" class="block-winners__item-prompt">Голосовать тут</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="swiper-slide">
-                                        <div class="block-winners__item">
-                                            <div class="block-winners__item-image">
-                                                <img src="nomin.png" alt="Winners 2024" loading="lazy"/>
-                                            </div>
-                                            <p class="block-winners__item-text">МОМЕНТ ГОДА</p>
-                                            <h2 class="block-winners__item-title">Это мгновение, запомнившаяся всем надолго.</h2>
-                                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeEUpPzTOcuq5LiSvenuYO1Yk3DEySsiftwBYVcoTI4EDaI0g/viewform?usp=dialog" target="_blank" class="block-winners__item-prompt">Голосовать тут</a>
-                                        </div>
-                                    </div>
-                                    
-                                </div>
-                                <div class="block-winners__actions">
-                                    <div class="block-winners__button-prev swiper-button-prev" role="button" aria-label="Предыдущий слайд"></div>
-                                    <div class="block-winners__pagination swiper-pagination" role="navigation" aria-label="Слайды"></div>
-                                    <div class="block-winners__button-next swiper-button-next" role="button" aria-label="Следующий слайд"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <div class="block-nominations-actual__bg">
-                <img src="images/photos/close-lock.png" alt="Lock" loading="lazy"/>
-            </div>
-                <section id="golos" class="block-timer">
-                    <div class="block-timer__wrap">
-                        <div class="block-timer__header">
-                            <h2 class="block-timer__title">Голосование проходит с 15 по 22 декабря</h2>
-                        </div>
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeEUpPzTOcuq5LiSvenuYO1Yk3DEySsiftwBYVcoTI4EDaI0g/viewform?usp=dialog" class="button-frame">
-                            <span>ГОЛОСОВАТЬ ЗДЕЕЕЕСЬ</span>
-                        </a>
-                    </div>
-                </section>
-            <section id="faq" class="block-faq">
-                <div class="block-faq__bg"></div>
-                <div class="block-faq__wrap">
-                    <div class="block-faq__header">
-                        <h2 class="block-faq__title">ПРАВИЛА</h2>
-                    </div>
-                    <ul class="block-faq__list">
-                        <li class="block-faq__item">
-                            <button class="block-faq__item-button" type="button">
-                                <h3 class="block-faq__item-title">ЧТО ПОНАДОБИТЬСЯ НА МЕРОПРИЯТИИ?</h3>
-                                <span class="block-faq__item-icon"></span>
-                            </button>
-                            <div class="block-faq__item-content-wrapper">
-                                <div class="block-faq__item-content">
-                                    <p class="block-faq__item-text">
-                                        Ваш билет — это ваш первоначальный капитал. Без него вы не попадёте за игровой стол.</br>
-                                        Предъявите на входе удостоверение личности, иначе мы примем вас за сотрудника налоговой и пропустим только в буфет.
-                                    </p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="block-faq__item">
-                            <button class="block-faq__item-button" type="button">
-                                <h3 class="block-faq__item-title">КОМУ 100% СТОИТ ПРЕХОДИТЬ НА МЕРОПРИЯТИЕ?</h3>
-                                <span class="block-faq__item-icon"></span>
-                            </button>
-                            <div class="block-faq__item-content-wrapper">
-                                <div class="block-faq__item-content">
-                                    <p class="block-faq__item-text">
-                                        100% следует приходить тем, чей возраст строго от -52 и до 67.
-                                    </p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="block-faq__item">
-                            <button class="block-faq__item-button" type="button">
-                                <h3 class="block-faq__item-title">ДОСМОТР</h3>
-                                <span class="block-faq__item-icon"></span>
-                            </button>
-                            <div class="block-faq__item-content-wrapper">
-                                <div class="block-faq__item-content">
-                                    <p class="block-faq__item-text">
-                                        На входе наша служба финансового контроля проверит, не пытаетесь ли вы пронести на игровой рынок любые карты, кроме карт “UNO”.
-                                </div>
-                            </div>
-                        </li>
-                        <li class="block-faq__item">
-                            <button class="block-faq__item-button" type="button">
-                                <h3 class="block-faq__item-title">НА МЕРОПРИЯТИЕ ЗАПРЕЩЕНО ПРИНОСИТЬ:</h3>
-                                <span class="block-faq__item-icon"></span>
-                            </button>
-                            <div class="block-faq__item-content-wrapper">
-                                <div class="block-faq__item-content">
-                                    <p class="block-faq__item-text">Оружие, пиротехнику, вещества с непредсказуемой доходностью. Наша единственная «взрывная» акция — это наш танцпол во время дискотеки. </br> Наркотические вещества и алкоголь. Разрешены только стратегический азарт, чай от Ольги Васильевны и дивиденды в виде смеха. </p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="block-faq__item">
-                            <button class="block-faq__item-button" type="button">
-                                <h3 class="block-faq__item-title">ЭТИКЕТ</h3>
-                                <span class="block-faq__item-icon"></span>
-                            </button>
-                            <div class="block-faq__item-content-wrapper">
-                                <div class="block-faq__item-content">
-                                    <p class="block-faq__item-text">Поддерживайте ваших коллег по игре, аплодисменты здесь только приветствуются. Помните: прав не тот кто прав, а тот кто прав. </p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="block-faq__item">
-                            <button class="block-faq__item-button" type="button">
-                                <h3 class="block-faq__item-title">ОБРАТИТЕ ВНИМАНИЕ:</h3>
-                                <span class="block-faq__item-icon"></span>
-                            </button>
-                            <div class="block-faq__item-content-wrapper">
-                                <div class="block-faq__item-content">
-                                    <p class="block-faq__item-text">Сохраняйте трезвую голову для расчёта рисков. Предлагая следующую песню во время  дискотеки, проверьте нет ли там ненормативной лексики - иначе наша охрана выведет вас с мероприятия и будет припоминать это все оставшиеся время. «Одна ошибка - и ты ошибся».ы</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="block-faq__item">
-                            <button class="block-faq__item-button" type="button">
-                                <h3 class="block-faq__item-title">ГДЕ БУДЕТ ПРОХОДИТЬ МЕРОПРИЯТИЕ?</h3>
-                                <span class="block-faq__item-icon"></span>
-                            </button>
-                            <div class="block-faq__item-content-wrapper">
-                                <div class="block-faq__item-content">
-                                    <p class="block-faq__item-text">
-                                        Мероприятие будет проходить на огоньке 27 декабря. </br> В школе номер 42, 14 кабинете.
-                                    </p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="block-faq__item">
-                            <button class="block-faq__item-button" type="button">
-                                <h3 class="block-faq__item-title">ПРО НАРУШЕНИЕ ПРАВИЛ</h3>
-                                <span class="block-faq__item-icon"></span>
-                            </button>
-                            <div class="block-faq__item-content-wrapper">
-                                <div class="block-faq__item-content">
-                                    <p class="block-faq__item-text">Нарушение правил = принудительный вывод с нашего мероприятия. Нарушитель будет беспощадно ликвидирован без компенсации вложенных средств. Ваши фишки аннулируются.</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="block-faq__item">
-                            <button class="block-faq__item-button" type="button">
-                                <h3 class="block-faq__item-title">ДРЕСС-КОД</h3>
-                                <span class="block-faq__item-icon"></span>
-                            </button>
-                            <div class="block-faq__item-content-wrapper">
-                                <div class="block-faq__item-content">
-                                    <p class="block-faq__item-text">Мы приветствуем стиль демонстрирующий элиту, престиж, шик и блеск. От вас — намёк на роскошь. От нас — королевское отношение. Спортивные штаны — только если это часть вашей победной стратегии. </p>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </section>
-        </main>
-        <footer class="footer">
-            <div class="footer__wrap">
-                <img class="footer__logo" src="images/logos/winline.png" alt="Winline" loading="lazy"/>
-                <img class="footer__logo-slay" src="images/logos/SLAY.png" alt="Footer logo" loading="lazy"/>
-                <h2 class="footer__title">ПРЕМИЯ, ГДЕ В &nbsp;ВЫБОРЕ ЛУЧШИХ УЧАСТВУЕШЬ ТЫ!</h2>
-                <a href="#golos" class="button-frame">
-                    <span>Голосовать</span>
-                </a>
-                <div class="footer__nav">
-                    <a href="#nominations" class="footer__nav-link">НОМИНАЦИИ</a>
-                    <a href="#faq" class="footer__nav-link">ПРАВИЛА</a>
-                </div>
-                <div class="footer__socials">
-                    <a href="https://vk.com/m.neiroset" class="footer__socials-link" target="_blank" aria-label="VK">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="34" height="20" viewBox="0 0 34 20" fill="none" aria-hidden="true">
-                            <path d="M0.46875 2.6334C0.46875 1.55739 1.32904 1.13265 2.38787 1.07601L7.31802 1.10433C7.61581 1.10433 7.88052 1.27423 7.97978 1.52907C9.10478 4.64385 10.4945 6.56934 12.1489 8.74969C12.2482 8.91958 12.4136 9.00453 12.579 9.00453C12.7114 9.00453 12.8438 8.9479 12.943 8.80632L13.0423 8.49484L13.0754 3.59615C13.0754 2.88825 12.6783 2.77498 11.7518 2.66172C11.3879 2.60509 11.1562 2.32192 11.1562 2.03876C11.1562 1.98213 11.1562 1.9255 11.1893 1.86887C11.6526 0.651271 13.1085 0.0283161 15.1599 0.0283161L17.0129 0C18.5349 0 19.9246 0.566323 19.9246 2.23698V8.66474C20.057 8.74969 20.1893 8.80632 20.3548 8.80632C20.6195 8.80632 20.9504 8.66474 21.2151 8.29663C22.9357 6.22955 24.8879 3.76605 25.1526 2.4635C25.1526 2.40687 25.1857 2.37856 25.2188 2.32192C25.5827 1.69897 26.5092 1.27423 26.9062 1.16096C26.9724 1.13265 27.0717 1.10433 27.204 1.10433H32.3327L32.6636 1.13265C33.1599 1.13265 33.5239 1.41581 33.6893 1.67065C33.9871 2.06708 33.921 2.49182 33.954 2.66172V2.85993C33.4577 5.4367 30.0165 8.32495 28.5607 10.1938C28.3621 10.4203 28.2629 10.6186 28.2629 10.8168C28.2629 10.9867 28.3621 11.1566 28.5276 11.3265L33.3585 16.5366C33.6232 16.8481 33.7555 17.2162 33.7555 17.5277C33.7555 18.4621 32.7298 19.0001 31.7371 19.0851L31.1746 19.1134H26.1452C26.046 19.1134 25.9798 19.1417 25.8805 19.1417C25.318 19.1417 24.8548 18.8869 24.5239 18.6037C23.4651 17.4994 22.4393 16.3667 21.4136 15.2624C21.2151 15.0359 21.1489 15.0076 20.9504 14.8943C20.7188 15.7155 20.5202 16.5649 20.2886 17.4144L20.1893 17.8958C20.0239 18.4055 19.5938 18.9435 18.7996 19.0851L18.3364 19.1134H15.0938C9.36949 19.1134 4.24081 12.1476 0.634191 3.45457C0.534926 3.22804 0.46875 2.91656 0.46875 2.6334Z" fill="#72320F"/>
-                        </svg>
-                    </a>
-                    
-                </div>
-                <div class="footer__partners">
-                    <img src="images/logos/winline.png" alt="Winline" loading="lazy"/>
-                    <img src="images/logos/metacorp.svg" alt="Metacorp" loading="lazy"/>
-                </div>
-            </div>
-            <div class="footer-copyright">
-                <div class="footer-copyright__links">
-                    
-                    <a href="assets/docs/Правила_SLAY_2025.pdf" target="_blank" class="footer-copyright__link">Правила STAR VEGAS</a>
-                </div>
-                <p class="footer-copyright__text">2025 ©</p>
-            </div>
-        </footer>
-        <div class="cookie-notice">
-            <h4 class="cookie-notice__title">ДИСКЕЙМЕР</h4>
-            <p class="cookie-notice__text">
-               Данное мероприятие не пропагандирует азартные игры и ставки. 
-               Все элементы, связанные с казино, картами или фишками, используются исключительно в стилистических и декоративных целях. 
-               Мероприятие носит развлекательный характер и не имеет отношения к реальным азартным играм.
-            </p>
-            <button class="cookie-notice__button button-default">Согласен</button>
-        </div>
-    </body>
+/* Появление фотографий снизу вверх */
+@keyframes photoAppear {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Основные элементы сайта */
+.d .half,
+.d .logo,
+.d h1,
+.d .social,
+.m {
+    animation: appear 1.5s ease both;
+}
+
+/* Фотографии */
+img {
+    animation: photoAppear 1.2s ease-out both;
+}
+
+/* Отключение анимации, если пользователь её ограничил */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+    }
+}
+</style>
+</head>
+<body>
+<main>
+  <div class="d">
+    <div class="half half--l" aria-hidden="true"></div>
+    <div class="half half--r" aria-hidden="true"></div>
+    <img class="logo" src="star_vegas_updated_2x.svg" alt="STAR VEGAS" width="584" height="191">
+    <h1>Скоро</h1>
+    <nav class="social" aria-label="STAR VEGAS в соцсетях">
+      <a href="https://vk.ru/m.neiroset" target="_blank" rel="noopener" aria-label="ВКонтакте"><svg aria-hidden="true" focusable="false" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M3.66528 26.5362C3.66528 23.8509 5.81219 22.7909 8.45455 22.6496L20.758 22.7203C21.5012 22.7203 22.1618 23.1443 22.4095 23.7802C25.217 31.5533 28.6851 36.3585 32.8137 41.7997C33.0615 42.2237 33.4743 42.4357 33.8872 42.4357C34.2175 42.4357 34.5478 42.2943 34.7955 41.941L35.0432 41.1637L35.1258 28.9387C35.1258 27.1721 34.1349 26.8895 31.8229 26.6068C30.9145 26.4655 30.3365 25.7588 30.3365 25.0522C30.3365 24.9109 30.3365 24.7695 30.4191 24.6282C31.5751 21.5896 35.2084 20.035 40.3279 20.035L44.952 19.9644C48.7504 19.9644 52.2185 21.3776 52.2185 25.5469V41.5877C52.5488 41.7997 52.8791 41.941 53.292 41.941C53.9526 41.941 54.7783 41.5877 55.4389 40.6691C59.7327 35.5105 64.6045 29.3627 65.2651 26.1122C65.2651 25.9708 65.3477 25.9002 65.4303 25.7588C66.3386 24.2042 68.6507 23.1443 69.6415 22.8616C69.8067 22.7909 70.0544 22.7203 70.3847 22.7203H83.1836L84.0093 22.7909C85.2479 22.7909 86.1562 23.4976 86.5691 24.1336C87.3123 25.1229 87.1471 26.1828 87.2297 26.6068V27.1015C85.9911 33.5319 77.4034 40.7397 73.7702 45.4036C73.2748 45.9689 73.027 46.4635 73.027 46.9582C73.027 47.3822 73.2748 47.8062 73.6876 48.2302L85.7434 61.2324C86.404 62.0097 86.7343 62.9284 86.7343 63.7057C86.7343 66.0376 84.1745 67.3802 81.6973 67.5922L80.2935 67.6629H67.7423C67.4946 67.6629 67.3295 67.7336 67.0817 67.7336C65.678 67.7336 64.522 67.0976 63.6962 66.3909C61.0539 63.635 58.4941 60.8084 55.9343 58.0525C55.4389 57.4872 55.2737 57.4165 54.7783 57.1339C54.2003 59.1832 53.7048 61.3031 53.1268 63.423L52.8791 64.6243C52.4662 65.8963 51.3928 67.2389 49.411 67.5922L48.255 67.6629H40.1628C25.8776 67.6629 13.0787 50.2794 4.07815 28.5854C3.83043 28.0201 3.66528 27.2428 3.66528 26.5362Z" fill="#72320F"/>
+</svg></a>
+      <a href="https://t.me/GG_profi_GG" target="_blank" rel="noopener" aria-label="Telegram"><svg aria-hidden="true" focusable="false" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M83.3185 20.3249C83.587 19.0271 82.3801 17.9087 81.1065 18.2751L9.91007 38.7551C8.29977 39.2183 8.18469 41.4561 9.73899 42.0821L26.7744 48.9426C27.2591 49.1378 27.8054 49.1077 28.2658 48.8605L50.952 36.6789C52.7357 35.7212 54.4619 38.0359 53.0352 39.4723L40.4779 52.1149C39.6475 52.951 39.8562 54.3509 40.8944 54.9083L70.5555 70.835C71.5933 71.3923 72.8751 70.7936 73.1138 69.64L83.3185 20.3249Z" fill="#72320F"/>
+</svg></a>
+    </nav>
+  </div>
+  <div class="frame m" role="img" aria-label="STAR VEGAS — скоро.">
+    <a class="vk" href="https://vk.ru/m.neiroset" target="_blank" rel="noopener" aria-label="ВКонтакте"></a>
+    <a class="tg" href="https://t.me/GG_profi_GG" target="_blank" rel="noopener" aria-label="Telegram"></a>
+  </div>
+</main>
+</body>
 </html>
